@@ -6,7 +6,7 @@ library(sqldf)
 #Reading only the required subset of data
 df <- read.csv2.sql("household_power_consumption.txt",sql="select * from file where Date in ('1/2/2007','2/2/2007')",na.strings="?");
 #create datetime column that can be used as x axis for the graph
-df$Datetime <- strptime(paste(df$Date,df$Time),"%d/%m/%Y %H:%M:%S");
+df$datetime <- strptime(paste(df$Date,df$Time),"%d/%m/%Y %H:%M:%S");
 png("plot4.png", width=480, height=480)
 #set rows and columns of plot
 par(mfrow=c(2,2));
